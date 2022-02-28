@@ -26,8 +26,8 @@
 ## How to use
 
 ### What hardware is needed on the computer?
-> 8GB of Memory, Processor with 8 cores (physical or virtual),
-> 10GB of available disk space and a network adapter with internet connection.
+> 12GB of memory, processor with 8 cores (physical or virtual),
+> 20GB of available disk space and a network adapter with internet connection.
 
 #### Additional remarks *
 > In case you don't have the specified amount of hardware, you can remove the configuration block in the
