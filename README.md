@@ -29,6 +29,11 @@
 > 8GB of Memory, Processor with 8 cores (physical or virtual),
 > 10GB of available disk space and a network adapter with internet connection.
 
+#### Additional remarks *
+> In case you don't have the specified amount of hardware, you can remove the configuration block in the
+> Vagrantfile for worker03. Do not modify the CPU or Memory values ​​of the cluster nodes to less than what is
+> already configured!
+
 ### What do I need to have installed on my computer?
 - [Vagrant](https://www.vagrantup.com/docs/installation)
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
@@ -61,6 +66,14 @@
     ...
 ```
 
+#### Additional remarks *
+> To get the interface name information, use the commands:
+> - GNU/Linux: ```ip a | grep mtu ```
+> - macOs: ``` ifconfig | grep mtu ```
+> - Windows: ```ipconfig /all | find /i "Description" ```
+
+> Use an interface from your routed local network (which has internet access) to define the IP address of the VM's!
+
 ### Files that will be modified automatically:
 > The file [kubeadm-join.sh](/shared/kubeadm-join.sh) will be modified automatically, no changes are needed in this file, it will receive data as follows:
 ```sh
@@ -68,15 +81,17 @@ kubeadm join <ip-of-k8smain01>:6443 --token <token> --discovery-token-ca-cert-ha
 ```
 
 ### How to run the project on my computer?
-> Download the project in the github root repository [cluster-k8s](https://github.com/fvmoraes/cluster-k8s).
-> Inside the directory, open the terminal and run the command "vagrant up"
+> - Download the project in the github root repository [cluster-k8s](https://github.com/fvmoraes/cluster-k8s).
+> - Inside the directory, open the terminal and run the command ```vagrant up```.
+> - If you have any problems, use ```vagrant destroy``` to delete the VM's.
+> - The ```vagrant halt``` command will just stop the VM's.
 
 ---
 ---
 ## Validation commands
 
 ### List of commands and their outputs:
-> Using Vagrant's SSH utility, access VM k8smain01 (vagrant ssh k8smain01),
+> Using Vagrant's SSH utility (```vagrant ssh```) access VM k8smain01 (```vagrant ssh k8smain01```),
 > and use the following list of commands to validate cluster operation:
 
 | Command | Applicability |

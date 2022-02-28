@@ -1,5 +1,6 @@
 Vagrant.configure("2") do |config|
-  #VM de k8smain01
+  
+  #Start of configuration k8smain01
   config.vm.define "k8smain01" do |k8smain01|
     k8smain01.vm.network "public_network",
      bridge: "wlp3s0",
@@ -22,7 +23,9 @@ Vagrant.configure("2") do |config|
       vb.name = "k8smain01"
     end
   end
-  #VM de k8sworker01
+  #End of configuration k8smain01
+
+  #Start of configuration k8sworker01
   config.vm.define "k8sworker01" do |k8sworker01|
     k8sworker01.vm.network "public_network",
      bridge: "wlp3s0",
@@ -43,7 +46,9 @@ Vagrant.configure("2") do |config|
       vb.name = "k8sworker01"
     end  
   end
-  #VM de k8sworker02
+  #End of configuration k8sworker01
+
+  #Start of configuration k8sworker02
   config.vm.define "k8sworker02" do |k8sworker02|
     k8sworker02.vm.network "public_network",
      bridge: "wlp3s0",
@@ -64,7 +69,9 @@ Vagrant.configure("2") do |config|
       vb.name = "k8sworker02"
     end  
   end
-  #VM de k8sworker03
+  #End of configuration k8sworker02
+
+  #Start of configuration k8sworker03
   config.vm.define "k8sworker03" do |k8sworker03|
     k8sworker03.vm.network "public_network",
      bridge: "wlp3s0",
@@ -85,4 +92,6 @@ Vagrant.configure("2") do |config|
       vb.name = "k8sworker03"
     end  
   end
+  #End of configuration k8sworker03
+
 end
